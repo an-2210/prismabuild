@@ -97,7 +97,6 @@ const SortableCanvasElement = ({ element, isSelected, onSelect }) => {
       layout
     >
 
-      {/* Type badge */}
       <AnimatePresence>
         {isSelected && (
           <motion.div
@@ -147,7 +146,6 @@ const BuilderCanvas = () => {
       style={{ background: previewMode ? 'hsl(var(--canvas-page))' : 'hsl(var(--canvas-bg))', paddingTop: previewMode ? '0' : '1.5rem' }}
       onClick={() => selectElement(null)}
     >
-      {/* Subtle grid */}
       {!previewMode && (
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.025]"
@@ -158,7 +156,6 @@ const BuilderCanvas = () => {
         />
       )}
 
-      {/* Ambient glow orbs */}
       {!previewMode && (
         <>
           <motion.div
@@ -176,14 +173,12 @@ const BuilderCanvas = () => {
         </>
       )}
 
-      {/* Canvas Area */}
       <div className={`p-6 w-full flex justify-center ${previewMode ? 'mt-14' : ''}`}>
         <motion.div
           animate={{ width: canvasWidths[deviceMode] }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
           className="relative max-w-[1100px] w-full z-10"
         >
-          {/* Canvas chrome label */}
           {!previewMode && (
             <motion.div
               initial={{ opacity: 0, y: 8 }}
@@ -198,7 +193,6 @@ const BuilderCanvas = () => {
             </motion.div>
           )}
 
-          {/* Page */}
           <motion.div
             id="builder-canvas-page"
             ref={setNodeRef}

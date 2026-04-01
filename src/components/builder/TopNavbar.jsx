@@ -23,7 +23,6 @@ const TopNavbar = () => {
       transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
       className="glass-navbar fixed top-0 left-0 right-0 z-50 h-14 flex items-center justify-between px-5"
     >
-      {/* Logo */}
       <Magnet padding={50} magnetStrength={3}>
         <div className="flex items-center gap-2.5 cursor-pointer">
           <motion.div
@@ -46,7 +45,6 @@ const TopNavbar = () => {
         </div>
       </Magnet>
 
-      {/* Center: Device Size Picker */}
       <div className={`flex items-center gap-2 transition-opacity ${previewMode ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
         <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground mr-2">
           Viewport
@@ -82,7 +80,6 @@ const TopNavbar = () => {
         </div>
       </div>
 
-      {/* Right Actions */}
       <div className="flex items-center gap-1">
         <motion.button className="icon-btn text-destructive hover:bg-destructive/10 hover:text-destructive" onClick={clearCanvas} whileTap={{ scale: 0.85 }} title="Clear Canvas">
           <Trash2 className="w-4 h-4" />

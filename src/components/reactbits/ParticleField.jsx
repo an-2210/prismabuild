@@ -60,7 +60,7 @@ const ParticleField = ({
         if (p.x < 0 || p.x > width) p.vx *= -1;
         if (p.y < 0 || p.y > height) p.vy *= -1;
 
-        // Mouse repulsion
+        
         const dx = p.x - mouseRef.current.x;
         const dy = p.y - mouseRef.current.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
@@ -77,7 +77,7 @@ const ParticleField = ({
         ctx.fill();
       }
 
-      // Connections
+      
       ctx.globalAlpha = 1;
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {

@@ -43,7 +43,6 @@ const LandingPage = () => {
 
   return (
     <div className="relative min-h-screen overflow-hidden flex flex-col" style={{ background: "hsl(var(--background))" }}>
-      {/* Particle Background */}
       <ParticleField
         particleCount={100}
         colors={["#8b5cf640", "#3b82f640", "#ec489940", "#06b6d440"]}
@@ -51,7 +50,6 @@ const LandingPage = () => {
         connectionDistance={100}
       />
 
-      {/* Gradient orbs */}
       <motion.div
         className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full pointer-events-none"
         animate={{ scale: [1, 1.2, 1], opacity: [0.08, 0.15, 0.08] }}
@@ -71,7 +69,6 @@ const LandingPage = () => {
         style={{ background: "radial-gradient(circle, hsl(210 100% 60% / 0.2), transparent 60%)" }}
       />
 
-      {/* Navbar */}
       <motion.nav
         initial={{ y: -40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -98,9 +95,7 @@ const LandingPage = () => {
         </div>
       </motion.nav>
 
-      {/* Hero */}
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 -mt-10">
-        {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -123,7 +118,6 @@ const LandingPage = () => {
           </div>
         </motion.div>
 
-        {/* Main heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -145,7 +139,6 @@ const LandingPage = () => {
           </h1>
         </motion.div>
 
-        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -157,7 +150,6 @@ const LandingPage = () => {
           Drag, drop, and ship production-ready sites in minutes.
         </motion.p>
 
-        {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -192,7 +184,6 @@ const LandingPage = () => {
           </Magnet>
         </motion.div>
 
-        {/* Features Grid */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -234,7 +225,6 @@ const LandingPage = () => {
         </motion.div>
       </div>
 
-      {/* Bottom fade */}
       <div className="relative z-10 h-20 bg-gradient-to-t from-background to-transparent" />
     </div>
   );

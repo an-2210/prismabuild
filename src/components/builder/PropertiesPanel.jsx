@@ -71,7 +71,7 @@ const PropertiesPanel = () => {
     const styleKeys = ['color', 'backgroundColor', 'titleColor', 'subtitleColor', 'descriptionColor', 'textColor', 'fontSize', 'fontWeight', 'textAlign', 'borderRadius'];
     const layoutKeys = ['paddingTop', 'paddingBottom', 'paddingX', 'paddingY', 'width', 'columns', 'marginTop', 'marginBottom', 'marginLeft', 'marginRight', 'buttonPosition'];
     
-    // Everything else is treated as content text mapping
+    
     const activeKeys = Object.keys(selectedElement.props).filter(k => !styleKeys.includes(k) && !layoutKeys.includes(k));
 
     if (activeKeys.length === 0) return <div className="text-xs text-muted-foreground/50">No content properties available.</div>;
@@ -114,7 +114,6 @@ const PropertiesPanel = () => {
 
     return (
       <div className="space-y-4">
-        {/* Colors */}
         {activeKeys.filter(k => k.toLowerCase().includes('color')).length > 0 && (
           <SpotlightCard className="glass-inset p-3 rounded-xl" spotlightColor="rgba(139, 92, 246, 0.08)">
             <label className="prop-label mb-3">Colors</label>
@@ -129,7 +128,6 @@ const PropertiesPanel = () => {
           </SpotlightCard>
         )}
 
-        {/* Typography */}
         {activeKeys.includes('fontSize') && (
            <SpotlightCard className="glass-inset p-3 rounded-xl" spotlightColor="rgba(139, 92, 246, 0.08)">
              <label className="prop-label">Typography</label>
@@ -153,7 +151,6 @@ const PropertiesPanel = () => {
            </SpotlightCard>
         )}
 
-        {/* Text Align */}
         {activeKeys.includes('textAlign') && (
           <div>
             <label className="prop-label">Alignment</label>
@@ -176,7 +173,6 @@ const PropertiesPanel = () => {
           </div>
         )}
 
-        {/* Border Radius */}
         {activeKeys.includes('borderRadius') && (
           <SliderControl 
             label="Border Radius" 
@@ -313,13 +309,11 @@ const PropertiesPanel = () => {
       transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1], delay: 0.15 }}
       className="glass w-[280px] flex-shrink-0 flex flex-col overflow-hidden h-full z-10"
     >
-      {/* Header */}
       <div className="px-4 pt-4 pb-3 border-b border-border/20">
         <div className="panel-header mb-3">
           <span>Properties</span>
         </div>
 
-        {/* Tabs */}
         <div className="flex gap-0.5 glass-inset p-1 rounded-xl">
           {tabs.map((tab) => (
             <button
@@ -348,7 +342,6 @@ const PropertiesPanel = () => {
         </div>
       </div>
 
-      {/* Content */}
       <div className="flex-1 overflow-y-auto scrollbar-thin px-4 pb-4">
         <AnimatePresence mode="wait">
           {!selectedElement ? (

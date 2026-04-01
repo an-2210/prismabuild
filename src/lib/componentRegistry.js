@@ -1,5 +1,4 @@
-// Component Registry
-// This file maps each component to a unique ID and defines its editable props.
+
 
 const componentRegistry = {
     Button: {

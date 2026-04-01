@@ -43,7 +43,7 @@ const BuilderPage = () => {
     setActiveDragElement(null);
     if (!over) return;
     
-    // Calculate drop coordinates for absolute elements (like Buttons)
+    
     let isAbsoluteItem = false;
     let extraProps = {};
     const itemType = active.data.current?.type || useBuilderStore.getState().elements.find(e => e.id === active.id)?.type;
@@ -66,7 +66,7 @@ const BuilderPage = () => {
        }
     }
 
-    // Drag from sidebar to canvas
+    
     if (active.data.current?.isSidebarItem) {
        if (over.id === "builder-canvas" || over.data.current?.isCanvasItem) {
          let insertIndex = null;
@@ -82,7 +82,7 @@ const BuilderPage = () => {
        return;
     }
     
-    // Sort within canvas
+    
     if (active.data.current?.isCanvasItem) {
       if (isAbsoluteItem && Object.keys(extraProps).length > 0) {
           updateElementProps(active.id, extraProps);
@@ -118,23 +118,19 @@ const BuilderPage = () => {
         <TopNavbar />
 
         <div className="flex flex-1 pt-14 overflow-hidden">
-          {/* Left Panel */}
           <div className="flex flex-col p-2 pr-0 gap-0">
             <ElementsPanel />
             <LayersPanel />
           </div>
 
-          {/* Canvas */}
           <BuilderCanvas />
 
-          {/* Right Panel */}
           <div className="p-2 pl-0">
             <PropertiesPanel />
           </div>
         </div>
       </motion.div>
       
-      {/* Dragging visual feedback */}
       <DragOverlay>
         {activeDragElement ? (
           <div className="px-4 py-2 bg-primary/20 backdrop-blur-md border border-primary/40 rounded-lg text-primary text-sm font-semibold shadow-2xl">

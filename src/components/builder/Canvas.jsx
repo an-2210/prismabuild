@@ -12,7 +12,7 @@ const handleDragEnd = (event) => {
     }
 
     const newComponent = {
-        id: `${active.id}-${Date.now()}`, // Ensure unique ID
+        id: `${active.id}-${Date.now()}`, 
         type: active.id,
         props: componentRegistry[active.id].defaultProps,
     };
